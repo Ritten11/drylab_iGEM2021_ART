@@ -28,10 +28,12 @@ automated*
 
 ## Step 1
 Step 1 is covered in `Subsetting_combinatorial_library.ipynb`. In this notebook, a balanced subset is created from a 
-combinatorial library. It produces a `Sample_list.csv` where the measured activity is missing.
+combinatorial library. It produces a `sample_list.csv` where the measured activity is missing. Note that each part-variant
+is assigned its own index. These indices need to be linked to the names of the actual parts using some sort of translation 
+dictionary. `part_names.csv` is used for this purpose.
 
 ## Step 2
-Step 2 is covered in `Preprocessing_v2.ipynb`. This file uses `Sample_list.csv` and raw absorbance measurements from 
+Step 2 is covered in `Preprocessing_v2.ipynb`. This file uses `sample_list.csv` and raw absorbance measurements from 
 the Alpha-Amylase Assay to connect the samples with their activity measurement. The raw data used for this is located in
 the `/data` folder. Each 96 well plate is given its own sub-folder where the name of the folder indicates the day at 
 which the measurements were taken. On the 5th of October, two measurements were taken and hence there are two folders
@@ -41,7 +43,7 @@ Note that the notebook needs to be executed once for each 96 well-plate.
 
 In addition to extracting the activity, the natural logarithm of the activity is also determined and stored as 
 "Corrected activity". This is a preprocessing step needed for the ART. Both the "Activity" and "Corrected activity" of 
-the samples contained on the 96 well-plate are written into `Sample_list.csv`. 
+the samples contained on the 96 well-plate are written into `sample_list.csv`. 
 
 ## Step 3
 Step 3 is covered in `Performing_ART_analysis.ipynb`. All the Machine Learning used for our project is covered in this 
