@@ -35,8 +35,8 @@ dictionary. `part_names.csv` is used for this purpose.
 ## Step 2
 Step 2 is covered in `Preprocessing_v2.ipynb`. This file uses `sample_list.csv` and raw absorbance measurements from 
 the Alpha-Amylase Assay to connect the samples with their activity measurement. The raw data used for this is located in
-the `/data` folder. Each 96 well plate is given its own sub-folder where the name of the folder indicates the day at 
-which the measurements were taken. On the 5th of October, two measurements were taken and hence there are two folders
+the `/training_data` folder. Each 96 well plate is given its own sub-folder where the name of the folder indicates the day at 
+which the measurements were taken. On the 5th of October, experiments were conducted on 2 96-well plates and hence there are two folders
 starting with `5-10`. More information about the raw measurements can be found in the `README.txt` located in each folder.
 Note that the notebook needs to be executed once for each 96 well-plate.
 
@@ -48,6 +48,6 @@ the samples contained on the 96 well-plate are written into `sample_list.csv`.
 ## Step 3
 Step 3 is covered in `Performing_ART_analysis.ipynb`. All the Machine Learning used for our project is covered in this 
 step. The produced model is thoroughly analysed to give some insights on how well the model will be able to generalise 
-to new data. Furthermore, the predicted corrected activity of the tested samples is saved to `Filled_sample_list.csv`.
-Finally, 30 exploitative recommendations are saved to `Exploit_reccomend.csv` and 30 explorative recommendations are 
-saved to `Explor_reccomend.csv`.
+to new data. Furthermore, the predicted corrected activity of the tested samples is saved to `ART_out/filled_sample_list.csv`.
+Finally, 30 exploitative recommendations are saved to `ART_out/exploit_reccomend.csv` and 30 explorative recommendations are 
+saved to `ART_out/explor_reccomend.csv`.
